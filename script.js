@@ -1,13 +1,20 @@
-document.getElementById('buscador').addEventListener('input', function(e) {
-    let filtro = e.target.value.toLowerCase();
-    let tarjetas = document.querySelectorAll('.tarjeta');
+function abrirModal(boton) {
+    const tarjeta = boton.parentElement;
+    const titulo = tarjeta.querySelector('h2').innerText;
+    const infoLarga = tarjeta.querySelector('.detalle-extendido').innerText;
 
-    tarjetas.forEach(tarjeta => {
-        let texto = tarjeta.querySelector('h2').textContent.toLowerCase();
-        if (texto.includes(filtro)) {
-            tarjeta.style.display = "block";
-        } else {
-            tarjeta.style.display = "none";
-        }
-    });
-});
+    document.getElementById('modalTitulo').innerText = titulo;
+    document.getElementById('modalDescripcion').innerText = infoLarga;
+    document.getElementById('miModal').style.display = "block";
+}
+
+function cerrarModal() {
+    document.getElementById('miModal').style.display = "none";
+}
+
+// Cerrar si se hace clic fuera de la cajita blanca
+window.onclick = function(event) {
+    if (event.target == document.getElementById('miModal')) {
+        cerrarModal();
+    }
+}
