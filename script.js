@@ -1,20 +1,16 @@
-function abrirModal(boton) {
-    const tarjeta = boton.parentElement;
-    const titulo = tarjeta.querySelector('h2').innerText;
-    const infoLarga = tarjeta.querySelector('.detalle-extendido').innerText;
+document.getElementById('buscador').addEventListener('input', (e) => {
+    const busqueda = e.target.value.toLowerCase();
+    const tarjetas = document.querySelectorAll('.tarjeta');
 
-    document.getElementById('modalTitulo').innerText = titulo;
-    document.getElementById('modalDescripcion').innerText = infoLarga;
-    document.getElementById('miModal').style.display = "block";
-}
-
-function cerrarModal() {
-    document.getElementById('miModal').style.display = "none";
-}
-
-// Cerrar si se hace clic fuera de la cajita blanca
-window.onclick = function(event) {
-    if (event.target == document.getElementById('miModal')) {
-        cerrarModal();
-    }
-}
+    tarjetas.forEach(tarjeta => {
+        // Busca tanto en el título (h2) como en el párrafo (p)
+        const titulo = tarjeta.querySelector('h2').innerText.toLowerCase();
+        const descripcion = tarjeta.querySelector('p').innerText.toLowerCase();
+        
+        if (titulo.includes(busqueda) || descripcion.includes(busqueda)) {
+            tarjeta.style.display = "block";
+        } else {
+            tarjeta.style.display = "none";
+        }
+    });
+});
