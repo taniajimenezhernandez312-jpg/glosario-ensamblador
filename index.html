@@ -1,49 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glosario Interactivo - Ensamblador</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <div class="decoracion-fondo blob1"></div>
-    <div class="decoracion-fondo blob2"></div>
+<section id="lista-terminos" class="cuadricula-tarjetas">
+    <article class="tarjeta">
+        <div class="numero">1</div>
+        <h2>MOV</h2>
+        <p>Mueve datos entre registros o memoria.</p>
+        <div class="ejemplo">Ejemplo: MOV AX, BX</div>
+        <div class="detalle-extendido" style="display:none;">
+            Esta instrucción es fundamental. Permite copiar el contenido del operando fuente al destino. 
+            No afecta las banderas (flags) del procesador y es la más utilizada para inicializar registros.
+        </div>
+        <button class="btn-ver" onclick="abrirModal(this)">Ver más</button>
+    </article>
 
-    <main class="contenedor-principal">
-        <header class="encabezado-moderno">
-            <h1>Glosario Interactivo: <br> <strong>Lenguaje Ensamblador</strong></h1>
-            <p>Basado en el Estándar IEEE 610.12</p>
-            <input type="text" id="buscador" placeholder="Buscar instrucciones...">
-        </header>
+    <article class="tarjeta">
+        <div class="numero">2</div>
+        <h2>ADD</h2>
+        <p>Suma dos operandos y guarda el resultado.</p>
+        <div class="ejemplo">Ejemplo: ADD AL, 5</div>
+        <div class="detalle-extendido" style="display:none;">
+            Suma el valor del primer operando con el segundo. El resultado se almacena en el primero. 
+            A diferencia de MOV, esta instrucción sí modifica las banderas de estado como Carry (acarreo) y Zero.
+        </div>
+        <button class="btn-ver" onclick="abrirModal(this)">Ver más</button>
+    </article>
+</section>
 
-        <section id="lista-terminos" class="cuadricula-tarjetas">
-            <article class="tarjeta">
-                <div class="numero">1</div>
-                <h2>MOV</h2>
-                <p>Mueve datos entre registros o memoria.</p>
-                <div class="ejemplo">Ejemplo: MOV AX, BX</div>
-                <button class="btn-ver">Ver más</button>
-            </article>
-
-            <article class="tarjeta">
-                <div class="numero">2</div>
-                <h2>ADD</h2>
-                <p>Suma dos operandos y guarda el resultado.</p>
-                <div class="ejemplo">Ejemplo: ADD AL, 5</div>
-                <button class="btn-ver">Ver más</button>
-            </article>
-
-            <article class="tarjeta">
-                <div class="numero">3</div>
-                <h2>SUB</h2>
-                <p>Resta el operando fuente del operando destino.</p>
-                <div class="ejemplo">Ejemplo: SUB AX, 10h</div>
-                <button class="btn-ver">Ver más</button>
-            </article>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<div id="miModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalDescripcion"></p>
+    </div>
+</div>
