@@ -1,136 +1,36 @@
-:root {
-    --fondo: #fff5f7;       /* Rosa nube muy claro para el fondo */
-    --encabezado: #7d5a7a;  /* Malva elegante (sustituye al azul oscuro) */
-    --detalle: #ffd1dc;     /* Rosa pastel para bordes y números */
-    --acento: #e0bbe4;      /* Lavanda suave para el efecto hover */
-    --blanco: #ffffff;
-    --texto-oscuro: #4a3a4a; /* Morado muy oscuro para lectura */
+/* Estilos para la ventana emergente */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(74, 58, 74, 0.5); /* Color malva transparente */
+    backdrop-filter: blur(5px);
 }
 
-body {
-    background-color: var(--fondo);
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    overflow-x: hidden;
-    color: var(--texto-oscuro);
-}
-
-/* Manchas decorativas de fondo (Blobs) */
-.decoracion-fondo {
-    position: absolute;
-    z-index: -1;
-    filter: blur(60px);
-    opacity: 0.6;
-}
-
-.blob1 { 
-    width: 350px; height: 350px; 
-    background: var(--detalle); 
-    top: -100px; left: -100px; 
-    border-radius: 50%; 
-}
-
-.blob2 { 
-    width: 250px; height: 250px; 
-    background: var(--acento); 
-    bottom: -50px; right: -50px; 
-    border-radius: 30% 70% 70% 30%; 
-}
-
-.contenedor-principal {
-    max-width: 950px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-/* Encabezado con nueva forma y color */
-.encabezado-moderno {
-    background: var(--encabezado);
-    color: white;
-    padding: 45px 30px;
-    border-radius: 35px 110px 35px 70px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(125, 90, 122, 0.2);
-}
-
-.encabezado-moderno h1 strong {
-    color: var(--detalle);
-}
-
-#buscador {
-    width: 85%;
-    max-width: 500px;
-    padding: 15px 25px;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    margin-top: 25px;
-    font-size: 17px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    outline: none;
-    transition: 0.3s;
-}
-
-#buscador:focus {
-    border-color: var(--detalle);
-}
-
-/* Tarjetas con estilo femenino */
-.cuadricula-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.tarjeta {
-    background: var(--blanco);
+.modal-contenido {
+    background-color: var(--blanco);
+    margin: 15% auto;
     padding: 30px;
     border-radius: 25px;
-    border-bottom: 8px solid var(--detalle);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.03);
-    transition: all 0.4s ease;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border: 3px solid var(--detalle);
+    position: relative;
+    animation: aparecer 0.3s ease;
 }
 
-.tarjeta:hover {
-    transform: translateY(-10px);
-    border-bottom-color: var(--acento);
-    box-shadow: 0 15px 30px rgba(224, 187, 228, 0.3);
+@keyframes aparecer {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
 }
 
-.numero {
-    background: var(--detalle);
-    color: var(--encabezado);
-    width: 30px; height: 30px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 10px; font-weight: bold; margin-bottom: 20px;
-}
-
-.tarjeta h2 { color: var(--encabezado); margin: 0 0 10px 0; }
-
-.ejemplo { 
-    display: block; 
-    margin-top: 20px; 
-    background: #fffafa;
-    padding: 12px;
-    border: 1px dashed var(--acento);
-    border-radius: 10px;
-    color: #6a5a6a; 
-    font-family: 'Consolas', monospace; 
-}
-
-.btn-ver {
-    background: transparent;
-    border: 2px solid var(--encabezado);
-    color: var(--encabezado);
-    padding: 8px 20px;
-    border-radius: 20px;
-    margin-top: 20px;
+.cerrar {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 28px;
     cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-ver:hover {
-    background: var(--encabezado);
-    color: white;
+    color: var(--encabezado);
 }
