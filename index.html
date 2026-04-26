@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario Interactivo - Ensamblador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="decoracion-fondo blob1"></div>
+    <div class="decoracion-fondo blob2"></div>
+
+    <main class="contenedor-principal">
+        <header class="encabezado-moderno">
+            <nav class="menu-falso">
+                <span>HOME</span>
+                <span>INSTRUCTION</span>
+                <span>ABOUT</span>
+            </nav>
+            <h1>Glosario Interactivo: <br> <strong>Lenguaje Ensamblador</strong></h1>
+            <p>Basado en el Estándar IEEE 610.12</p>
+            <input type="text" id="buscador" placeholder="Buscar instrucciones...">
+        </header>
+
+        <section id="lista-terminos" class="cuadricula-tarjetas">
+            <article class="tarjeta">
+                <div class="numero">1</div>
+                <h2>MOV</h2>
+                <p>Mueve datos entre registros o memoria.</p>
+                <div class="ejemplo">Ejemplo: MOV AX, BX</div>
+                <button class="btn-ver">Ver más</button>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">2</div>
+                <h2>ADD</h2>
+                <p>Suma dos operandos y guarda el resultado.</p>
+                <div class="ejemplo">Ejemplo: ADD AL, 5</div>
+                <button class="btn-ver">Ver más</button>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
