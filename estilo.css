@@ -1,9 +1,10 @@
 :root {
-    --fondo: #f3efff;       /* Un lila muy clarito */
-    --azul-oscuro: #4b3f72; /* Un morado profundo para el encabezado */
-    --verde-pastel: #baffd9; /* Un verde menta para los detalles */
-    --coral: #ffb7c5;       /* Un rosa suave para el hover */
+    --fondo: #fff5f7;       /* Rosa nube muy claro para el fondo */
+    --encabezado: #7d5a7a;  /* Malva elegante (sustituye al azul oscuro) */
+    --detalle: #ffd1dc;     /* Rosa pastel para bordes y números */
+    --acento: #e0bbe4;      /* Lavanda suave para el efecto hover */
     --blanco: #ffffff;
+    --texto-oscuro: #4a3a4a; /* Morado muy oscuro para lectura */
 }
 
 body {
@@ -11,28 +12,29 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    color: var(--texto-oscuro);
 }
 
-/* Manchas decorativas de fondo mejoradas */
+/* Manchas decorativas de fondo (Blobs) */
 .decoracion-fondo {
     position: absolute;
     z-index: -1;
     filter: blur(60px);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .blob1 { 
     width: 350px; height: 350px; 
-    background: var(--verde-pastel); 
+    background: var(--detalle); 
     top: -100px; left: -100px; 
     border-radius: 50%; 
 }
 
 .blob2 { 
     width: 250px; height: 250px; 
-    background: var(--coral); 
+    background: var(--acento); 
     bottom: -50px; right: -50px; 
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+    border-radius: 30% 70% 70% 30%; 
 }
 
 .contenedor-principal {
@@ -41,33 +43,38 @@ body {
     padding: 20px;
 }
 
-/* Encabezado ajustado sin menú */
+/* Encabezado con nueva forma y color */
 .encabezado-moderno {
-    background: var(--azul-oscuro);
+    background: var(--encabezado);
     color: white;
-    padding: 45px 30px; /* Espaciado más equilibrado ahora que no hay Home/About */
+    padding: 45px 30px;
     border-radius: 35px 110px 35px 70px;
     text-align: center;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(125, 90, 122, 0.2);
 }
 
 .encabezado-moderno h1 strong {
-    color: var(--verde-pastel);
+    color: var(--detalle);
 }
 
 #buscador {
     width: 85%;
     max-width: 500px;
     padding: 15px 25px;
-    border-radius: 12px;
-    border: none;
+    border-radius: 15px;
+    border: 2px solid transparent;
     margin-top: 25px;
     font-size: 17px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     outline: none;
+    transition: 0.3s;
 }
 
-/* Cuadrícula de tarjetas */
+#buscador:focus {
+    border-color: var(--detalle);
+}
+
+/* Tarjetas con estilo femenino */
 .cuadricula-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -79,44 +86,43 @@ body {
     background: var(--blanco);
     padding: 30px;
     border-radius: 25px;
-    border-bottom: 10px solid var(--verde-pastel);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    border-bottom: 8px solid var(--detalle);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.03);
     transition: all 0.4s ease;
-    position: relative;
 }
 
 .tarjeta:hover {
-    transform: translateY(-12px);
-    border-bottom-color: var(--coral);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    border-bottom-color: var(--acento);
+    box-shadow: 0 15px 30px rgba(224, 187, 228, 0.3);
 }
 
 .numero {
-    background: var(--verde-pastel);
-    color: var(--azul-oscuro);
-    width: 28px; height: 28px;
+    background: var(--detalle);
+    color: var(--encabezado);
+    width: 30px; height: 30px;
     display: flex; align-items: center; justify-content: center;
-    border-radius: 8px; font-weight: bold; margin-bottom: 20px;
-    font-size: 14px;
+    border-radius: 10px; font-weight: bold; margin-bottom: 20px;
 }
 
-.tarjeta h2 { color: var(--azul-oscuro); margin: 0 0 10px 0; }
+.tarjeta h2 { color: var(--encabezado); margin: 0 0 10px 0; }
 
 .ejemplo { 
     display: block; 
     margin-top: 20px; 
-    background: #f8f9fa;
+    background: #fffafa;
     padding: 12px;
+    border: 1px dashed var(--acento);
     border-radius: 10px;
-    color: #555; 
+    color: #6a5a6a; 
     font-family: 'Consolas', monospace; 
-    font-size: 13px; 
 }
 
 .btn-ver {
     background: transparent;
-    border: 2px solid var(--azul-oscuro);
-    padding: 8px 18px;
+    border: 2px solid var(--encabezado);
+    color: var(--encabezado);
+    padding: 8px 20px;
     border-radius: 20px;
     margin-top: 20px;
     cursor: pointer;
@@ -125,6 +131,6 @@ body {
 }
 
 .btn-ver:hover {
-    background: var(--azul-oscuro);
+    background: var(--encabezado);
     color: white;
 }
