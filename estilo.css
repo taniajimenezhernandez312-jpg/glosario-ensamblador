@@ -1,8 +1,8 @@
 :root {
-    --fondo: #fdf6e9;
-    --azul-oscuro: #1a2a3a;
-    --verde-pastel: #a8d5ba;
-    --coral: #f2a6a6;
+    --fondo: #f3efff;       /* Un lila muy clarito */
+    --azul-oscuro: #4b3f72; /* Un morado profundo para el encabezado */
+    --verde-pastel: #baffd9; /* Un verde menta para los detalles */
+    --coral: #ffb7c5;       /* Un rosa suave para el hover */
     --blanco: #ffffff;
 }
 
