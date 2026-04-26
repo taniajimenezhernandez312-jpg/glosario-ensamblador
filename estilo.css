@@ -13,63 +13,118 @@ body {
     overflow-x: hidden;
 }
 
-/* Formas orgánicas de fondo */
-.forma-decorativa-1 {
+/* Manchas decorativas de fondo mejoradas */
+.decoracion-fondo {
     position: absolute;
-    width: 300px; height: 300px;
-    background: var(--verde-pastel);
-    border-radius: 40% 60% 70% 30%;
-    top: -100px; left: -100px;
     z-index: -1;
+    filter: blur(60px);
     opacity: 0.5;
 }
 
-.contenedor {
-    max-width: 900px;
-    margin: 50px auto;
+.blob1 { 
+    width: 350px; height: 350px; 
+    background: var(--verde-pastel); 
+    top: -100px; left: -100px; 
+    border-radius: 50%; 
+}
+
+.blob2 { 
+    width: 250px; height: 250px; 
+    background: var(--coral); 
+    bottom: -50px; right: -50px; 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+}
+
+.contenedor-principal {
+    max-width: 950px;
+    margin: 40px auto;
     padding: 20px;
 }
 
-header {
+/* Encabezado ajustado sin menú */
+.encabezado-moderno {
     background: var(--azul-oscuro);
     color: white;
-    padding: 60px 40px;
-    border-radius: 30px 100px 30px 60px;
+    padding: 45px 30px; /* Espaciado más equilibrado ahora que no hay Home/About */
+    border-radius: 35px 110px 35px 70px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
 }
 
-header h1 span { color: var(--verde-pastel); }
+.encabezado-moderno h1 strong {
+    color: var(--verde-pastel);
+}
 
 #buscador {
-    width: 80%;
+    width: 85%;
+    max-width: 500px;
     padding: 15px 25px;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
-    margin-top: 30px;
-    font-size: 18px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-top: 25px;
+    font-size: 17px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    outline: none;
 }
 
-.cuadricula {
+/* Cuadrícula de tarjetas */
+.cuadricula-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 30px;
     margin-top: 50px;
 }
 
 .tarjeta {
-    background: white;
+    background: var(--blanco);
     padding: 30px;
-    border-radius: 20px;
-    border-bottom: 8px solid var(--verde-pastel);
-    transition: 0.3s;
+    border-radius: 25px;
+    border-bottom: 10px solid var(--verde-pastel);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
 }
 
 .tarjeta:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     border-bottom-color: var(--coral);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.tarjeta h2 { color: var(--azul-oscuro); margin-top: 0; }
-.ejemplo { display: block; margin-top: 15px; color: #777; font-family: monospace; font-size: 14px; }
+.numero {
+    background: var(--verde-pastel);
+    color: var(--azul-oscuro);
+    width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-weight: bold; margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.tarjeta h2 { color: var(--azul-oscuro); margin: 0 0 10px 0; }
+
+.ejemplo { 
+    display: block; 
+    margin-top: 20px; 
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 10px;
+    color: #555; 
+    font-family: 'Consolas', monospace; 
+    font-size: 13px; 
+}
+
+.btn-ver {
+    background: transparent;
+    border: 2px solid var(--azul-oscuro);
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-ver:hover {
+    background: var(--azul-oscuro);
+    color: white;
+}
