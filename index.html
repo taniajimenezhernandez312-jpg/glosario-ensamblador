@@ -4,43 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glosario Interactivo - Ensamblador</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
         <h1>Glosario Interactivo: Lenguaje Ensamblador</h1>
         <p>Basado en el Estándar <strong>IEEE 610.12</strong></p>
-        <input type="text" id="buscador" placeholder="Buscar instrucción... (ej: MOV, ADD, JMP)">
+        <input type="text" id="buscador" placeholder="Buscar instrucciones...">
     </header>
-
-    <main id="glosario-container">
-        <article class="tarjeta" data-nombre="MOV">
-            <span class="categoria">Transferencia</span>
-            <h2>MOV</h2>
-            <p><strong>Definición:</strong> Instrucción que copia el contenido de un operando fuente a un operando destino. No modifica el valor del operando fuente.</p>
-            <p><strong>Términos relacionados:</strong> LEA, XCHG</p>
-            <div class="ejemplo">
-                <strong>Ejemplo de uso:</strong>
-                <pre><code>MOV AX, BX ; Copia el valor de BX en AX</code></pre>
-            </div>
-            <p class="notas"><strong>Notas:</strong> Esta instrucción no puede usar dos operandos de memoria directa simultáneamente.</p>
-            <p class="fuente">Fuente: [1] Intel 64 and IA-32 Architectures Manual.</p>
-        </article>
-
-        <article class="tarjeta" data-nombre="ADD">
-            <span class="categoria">Aritmética</span>
-            <h2>ADD</h2>
-            <p><strong>Definición:</strong> Suma el operando fuente al operando destino y almacena el resultado en el destino.</p>
-            <p><strong>Términos relacionados:</strong> ADC, INC, SUB</p>
-            <div class="ejemplo">
-                <strong>Ejemplo de uso:</strong>
-                <pre><code>ADD EAX, 10 ; Suma 10 al registro EAX</code></pre>
-            </div>
-            <p class="notas"><strong>Notas:</strong> Afecta las banderas de estado (ZF, SF, CF, OF, AF, PF).</p>
-            <p class="fuente">Fuente: [1] Intel 64 and IA-32 Architectures Manual.</p>
-        </article>
-    </main>
-
+    
     <script src="script.js"></script>
 </body>
+</html>
 </html>
