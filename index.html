@@ -20,275 +20,382 @@
         <section id="lista-terminos" class="cuadricula-tarjetas">
             <article class="tarjeta">
                 <div class="numero">1</div>
-                <h2>MOV</h2>
-                <p>Mueve datos entre registros o memoria.</p>
-                <div class="ejemplo">Ejemplo: MOV AX, BX</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>AAA</h2>
+                <p>Ajuste ASCII para la suma.</p>
+                <div class="ejemplo">Instrucción: AAA</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">2</div>
-                <h2>ADD</h2>
-                <p>Suma dos operandos y guarda el resultado.</p>
-                <div class="ejemplo">Ejemplo: ADD AL, 5</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>AAD</h2>
+                <p>Ajuste ASCII antes de la división.</p>
+                <div class="ejemplo">Instrucción: AAD</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">3</div>
-                <h2>SUB</h2>
-                <p>Resta el operando fuente del operando destino.</p>
-                <div class="ejemplo">Ejemplo: SUB AX, 10h</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>AAM</h2>
+                <p>Ajuste ASCII tras la multiplicación (separa unidades y decenas).</p>
+                <div class="ejemplo">Instrucción: AAM</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">4</div>
-                <h2>.code</h2>
-                <p>Marca el inicio del segmento donde se escriben las instrucciones.</p>
-                <div class="ejemplo">Uso: .code</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>AAS</h2>
+                <p>Ajuste ASCII para la resta.</p>
+                <div class="ejemplo">Instrucción: AAS</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">5</div>
-                <h2>.data</h2>
-                <p>Marca el inicio del segmento donde se definen las variables.</p>
-                <div class="ejemplo">Uso: .data</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>ADC</h2>
+                <p>Suma con acarreo (Carry).</p>
+                <div class="ejemplo">Ejemplo: ADC AX, BX</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">6</div>
-                <h2>.model small</h2>
-                <p>Configura el modelo de memoria (segmentos de datos y código de hasta 64KB).</p>
-                <div class="ejemplo">Uso: .model small</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>ADD</h2>
+                <p>Suma simple de dos operandos.</p>
+                <div class="ejemplo">Ejemplo: ADD AL, 5</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">7</div>
-                <h2>.stack 100h</h2>
-                <p>Reserva 256 bytes para el uso de la pila (stack).</p>
-                <div class="ejemplo">Uso: .stack 100h</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>AND</h2>
+                <p>Operación lógica "Y".</p>
+                <div class="ejemplo">Ejemplo: AND AL, 0Fh</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">8</div>
-                <h2>db (Define Byte)</h2>
-                <p>Reserva 8 bits de memoria para un dato o carácter.</p>
-                <div class="ejemplo">Ejemplo: var1 db 10</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CALL</h2>
+                <p>Llama a un procedimiento o función.</p>
+                <div class="ejemplo">Ejemplo: CALL mi_proceso</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">9</div>
-                <h2>dw (Define Word)</h2>
-                <p>Reserva 16 bits de memoria (2 bytes).</p>
-                <div class="ejemplo">Ejemplo: var2 dw 1000h</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CBW</h2>
+                <p>Convierte un Byte en Word (extiende el signo de AL a AX).</p>
+                <div class="ejemplo">Instrucción: CBW</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">10</div>
-                <h2>dup</h2>
-                <p>Operador que permite repetir un valor varias veces al reservar memoria.</p>
-                <div class="ejemplo">Ejemplo: db 5 dup(0)</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CLC</h2>
+                <p>Limpia la bandera de acarreo (Carry Flag = 0).</p>
+                <div class="ejemplo">Instrucción: CLC</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">11</div>
-                <h2>end</h2>
-                <p>Indica el fin del archivo fuente.</p>
-                <div class="ejemplo">Uso: end main</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CLD</h2>
+                <p>Limpia la bandera de dirección (procesamiento hacia adelante).</p>
+                <div class="ejemplo">Instrucción: CLD</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">12</div>
-                <h2>endp</h2>
-                <p>Marca el final de un procedimiento (proc).</p>
-                <div class="ejemplo">Uso: main endp</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CLI</h2>
+                <p>Desactiva interrupciones externas.</p>
+                <div class="ejemplo">Instrucción: CLI</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">13</div>
-                <h2>equ</h2>
-                <p>Crea una constante simbólica o un alias para una dirección.</p>
-                <div class="ejemplo">Ejemplo: PI equ 3</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CMC</h2>
+                <p>Complementa (invierte) la bandera de acarreo.</p>
+                <div class="ejemplo">Instrucción: CMC</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">14</div>
-                <h2>main</h2>
-                <p>Nombre común para el procedimiento principal del programa.</p>
-                <div class="ejemplo">Uso: main proc</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CMP</h2>
+                <p>Compara dos valores (resta interna que solo afecta banderas).</p>
+                <div class="ejemplo">Ejemplo: CMP AX, 10</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">15</div>
-                <h2>proc</h2>
-                <p>Define el inicio de un procedimiento o función.</p>
-                <div class="ejemplo">Ejemplo: mi_func proc</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>CWD</h2>
+                <p>Convierte Word en Double Word (extiende signo de AX a DX:AX).</p>
+                <div class="ejemplo">Instrucción: CWD</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">16</div>
-                <h2>AAM</h2>
-                <p>Ajuste ASCII después de la multiplicación; separa unidades y decenas.</p>
-                <div class="ejemplo">Instrucción: AAM</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>DAA</h2>
+                <p>Ajuste decimal para la suma (usado en BCD).</p>
+                <div class="ejemplo">Instrucción: DAA</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">17</div>
-                <h2>CMP</h2>
-                <p>Compara dos valores restándolos (afecta las banderas de estado).</p>
-                <div class="ejemplo">Ejemplo: CMP AX, 0</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>DAS</h2>
+                <p>Ajuste decimal para la resta.</p>
+                <div class="ejemplo">Instrucción: DAS</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">18</div>
                 <h2>DEC</h2>
-                <p>Resta 1 al valor de un registro o posición de memoria.</p>
+                <p>Decrementa en 1 (resta 1).</p>
                 <div class="ejemplo">Ejemplo: DEC CX</div>
-                <button class="btn-ver">Ver más</button>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">19</div>
                 <h2>DIV</h2>
-                <p>Divide el acumulador entre un operando (8 o 16 bits).</p>
+                <p>División entera sin signo (usa AX o DX:AX).</p>
                 <div class="ejemplo">Ejemplo: DIV BL</div>
-                <button class="btn-ver">Ver más</button>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">20</div>
-                <h2>INC</h2>
-                <p>Suma 1 al valor de un registro o posición de memoria.</p>
-                <div class="ejemplo">Ejemplo: INC SI</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>HLT</h2>
+                <p>Detiene el procesador hasta la próxima interrupción.</p>
+                <div class="ejemplo">Instrucción: HLT</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">21</div>
-                <h2>INT 21h</h2>
-                <p>Ejecuta una interrupción del DOS para servicios de entrada y salida.</p>
-                <div class="ejemplo">Uso: INT 21h</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>IDIV / IMUL</h2>
+                <p>División y Multiplicación entera con signo.</p>
+                <div class="ejemplo">Ejemplo: IMUL BL</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">22</div>
-                <h2>JA / JB</h2>
-                <p>Saltos condicionales: JA (mayor) y JB (menor) para números sin signo.</p>
-                <div class="ejemplo">Ejemplo: JA etiqueta</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>INC</h2>
+                <p>Incrementa en 1 (suma 1).</p>
+                <div class="ejemplo">Ejemplo: INC SI</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">23</div>
-                <h2>JE / JZ</h2>
-                <p>Salto si es igual o si el resultado es cero.</p>
-                <div class="ejemplo">Ejemplo: JE salir</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>INT</h2>
+                <p>Genera una interrupción de software (ej. int 21h).</p>
+                <div class="ejemplo">Uso: INT 21h</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">24</div>
-                <h2>JMP</h2>
-                <p>Salto incondicional a una etiqueta específica.</p>
-                <div class="ejemplo">Ejemplo: JMP inicio</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JA / JAE / JB / JBE</h2>
+                <p>Saltos condicionales para números sin signo (mayor, mayor igual, menor, menor igual).</p>
+                <div class="ejemplo">Ejemplo: JA etiqueta</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">25</div>
-                <h2>LOOP</h2>
-                <p>Decrementa CX y salta si no ha llegado a cero.</p>
-                <div class="ejemplo">Uso: LOOP ciclo</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JC / JCXZ</h2>
+                <p>Salto si hay acarreo o si el registro CX es cero.</p>
+                <div class="ejemplo">Ejemplo: JCXZ salir</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">26</div>
-                <h2>MUL</h2>
-                <p>Multiplica el acumulador por un operando.</p>
-                <div class="ejemplo">Ejemplo: MUL BL</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JE / JZ</h2>
+                <p>Salto si es igual o si el resultado es cero (ZF = 1).</p>
+                <div class="ejemplo">Ejemplo: JZ es_cero</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">27</div>
-                <h2>PUSH / POP</h2>
-                <p>PUSH guarda un valor en la pila; POP lo recupera.</p>
-                <div class="ejemplo">Ejemplo: PUSH AX</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JG / JGE / JL / JLE</h2>
+                <p>Saltos condicionales para números con signo.</p>
+                <div class="ejemplo">Ejemplo: JG mayor_con_signo</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">28</div>
-                <h2>XOR</h2>
-                <p>Operación lógica "OR Exclusivo". Útil para limpiar registros.</p>
-                <div class="ejemplo">Ejemplo: XOR AX, AX</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JMP</h2>
+                <p>Salto incondicional (siempre salta).</p>
+                <div class="ejemplo">Ejemplo: JMP inicio</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">29</div>
-                <h2>AX / BX / CX / DX</h2>
-                <p>Registros generales (Acumulador, Base, Contador, Datos).</p>
-                <div class="ejemplo">Registros de 16 bits</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>JNE / JNZ</h2>
+                <p>Salto si no es igual o no es cero (ZF = 0).</p>
+                <div class="ejemplo">Ejemplo: JNZ continuar</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">30</div>
-                <h2>OFFSET</h2>
-                <p>Obtiene la dirección de memoria exacta (desplazamiento) de una variable.</p>
-                <div class="ejemplo">Ejemplo: MOV DX, OFFSET msg</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>LEA</h2>
+                <p>Carga la dirección efectiva (puntero) en un registro.</p>
+                <div class="ejemplo">Ejemplo: LEA DX, cadena</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">31</div>
-                <h2>$ (Signo Pesos)</h2>
-                <p>Fin de cadena para la función 09h de la INT 21h.</p>
-                <div class="ejemplo">Ejemplo: db "Hola$"</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>LOOP / LOOPE / LOOPNE</h2>
+                <p>Ciclos automáticos basados en el registro CX.</p>
+                <div class="ejemplo">Ejemplo: LOOP ciclo</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">32</div>
-                <h2>0Ah / 0Dh</h2>
-                <p>Salto de línea (Line Feed) y retorno de carro (Carriage Return).</p>
-                <div class="ejemplo">Códigos: 10 y 13 decimal</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>MOV</h2>
+                <p>Mover o copiar datos de un lugar a otro.</p>
+                <div class="ejemplo">Ejemplo: MOV AX, @data</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">33</div>
-                <h2>AH = 09h</h2>
-                <p>Función para imprimir una cadena de texto en pantalla.</p>
-                <div class="ejemplo">MOV AH, 09h</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>NEG / NOT</h2>
+                <p>NEG cambia el signo; NOT invierte los bits (lógico).</p>
+                <div class="ejemplo">Ejemplo: NEG AX</div>
             </article>
 
             <article class="tarjeta">
                 <div class="numero">34</div>
-                <h2>AH = 4Ch</h2>
-                <p>Finalizar el programa y volver al sistema.</p>
-                <div class="ejemplo">MOV AH, 4Ch</div>
-                <button class="btn-ver">Ver más</button>
+                <h2>PUSH / POP / PUSHA / POPA</h2>
+                <p>Operaciones con la pila (individuales o todos los registros).</p>
+                <div class="ejemplo">Ejemplo: PUSH AX</div>
             </article>
+
+            <article class="tarjeta">
+                <div class="numero">35</div>
+                <h2>RET</h2>
+                <p>Regresa de un procedimiento (vuelve a la dirección de la pila).</p>
+                <div class="ejemplo">Instrucción: RET</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">36</div>
+                <h2>SHL / SHR / SAL / SAR</h2>
+                <p>Desplazamientos lógicos y aritméticos de bits.</p>
+                <div class="ejemplo">Ejemplo: SHL AL, 1</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">37</div>
+                <h2>XOR</h2>
+                <p>Operación lógica "O exclusiva" (usada para poner registros en 0).</p>
+                <div class="ejemplo">Ejemplo: XOR AX, AX</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">38</div>
+                <h2>AX / AH / AL</h2>
+                <p>Registro acumulador (16 bits, Parte Alta, Parte Baja).</p>
+                <div class="ejemplo">Uso: Operaciones aritméticas</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">39</div>
+                <h2>BX / CX / DX</h2>
+                <p>Registros Base, Contador y Datos (y sus partes H/L).</p>
+                <div class="ejemplo">Registros generales</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">40</div>
+                <h2>SI / DI / BP / SP</h2>
+                <p>Índices de origen/destino y punteros de pila.</p>
+                <div class="ejemplo">Registros de índice y puntero</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">41</div>
+                <h2>CS / DS / SS / ES</h2>
+                <p>Registros de Segmento (Código, Datos, Pila, Extra).</p>
+                <div class="ejemplo">Manejo de memoria</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">42</div>
+                <h2>DB / DW / DD</h2>
+                <p>Define Byte (8), Word (16) o Double Word (32 bits).</p>
+                <div class="ejemplo">Ejemplo: var db 0</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">43</div>
+                <h2>OFFSET</h2>
+                <p>Obtiene la dirección de desplazamiento de una variable.</p>
+                <div class="ejemplo">Ejemplo: MOV DX, OFFSET msg</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">44</div>
+                <h2>PROC / ENDP / END</h2>
+                <p>Inicio y fin de procedimientos y fin del archivo fuente.</p>
+                <div class="ejemplo">Estructura del programa</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">45</div>
+                <h2>$ / ?</h2>
+                <p>Posición actual ($) y reserva de espacio no inicializado (?).</p>
+                <div class="ejemplo">Ejemplo: db 10 dup(?)</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">46</div>
+                <h2>titulo / msg_f / msg_c</h2>
+                <p>Etiquetas usadas para tus cadenas de texto y mensajes.</p>
+                <div class="ejemplo">Uso: En segmento .data</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">47</div>
+                <h2>filas / columnas / cont_f</h2>
+                <p>Variables para control de bucles y dimensiones de figuras.</p>
+                <div class="ejemplo">Uso: Contadores de bucles</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">48</div>
+                <h2>cicloLoop / cicloLoop1</h2>
+                <p>Etiquetas de control para saltos y bucles anidados.</p>
+                <div class="ejemplo">Uso: Etiquetas de destino</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">49</div>
+                <h2>AH = 01h / 02h</h2>
+                <p>Leer carácter con eco / Escribir un carácter en pantalla.</p>
+                <div class="ejemplo">INT 21h</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">50</div>
+                <h2>AH = 09h / 0Ah</h2>
+                <p>Mostrar cadena ($) / Entrada de cadena con buffer.</p>
+                <div class="ejemplo">INT 21h</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">51</div>
+                <h2>AH = 4Ch</h2>
+                <p>Terminar programa con código de retorno.</p>
+                <div class="ejemplo">MOV AH, 4Ch</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">52</div>
+                <h2>0Ah / 0Dh</h2>
+                <p>Salto de línea (LF) y Retorno de carro (CR).</p>
+                <div class="ejemplo">Valores: 10 y 13</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">53</div>
+                <h2>30h</h2>
+                <p>Valor para convertir el dígito '0' (ASCII a decimal).</p>
+                <div class="ejemplo">Uso: Ajuste numérico</div>
+            </article>
+
+            <article class="tarjeta">
+                <div class="numero">54</div>
+                <h2>02h / 0Eh</h2>
+                <p>Símbolos especiales: Cara feliz y Nota musical.</p>
+                <div class="ejemplo">Caracteres gráficos</div>
+            </article>
+
         </section>
     </main>
 
