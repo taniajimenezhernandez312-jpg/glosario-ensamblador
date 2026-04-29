@@ -1,6 +1,6 @@
 :root {
     --fondo: #fff5f7;       /* Rosa nube muy claro para el fondo */
-    --encabezado: #7d5a7a;  /* Malva elegante (sustituye al azul oscuro) */
+    --encabezado: #7d5a7a;  /* Malva elegante */
     --detalle: #ffd1dc;     /* Rosa pastel para bordes y números */
     --acento: #e0bbe4;      /* Lavanda suave para el efecto hover */
     --blanco: #ffffff;
@@ -11,13 +11,14 @@ body {
     background-color: var(--fondo);
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
+    padding-bottom: 50px;
     overflow-x: hidden;
     color: var(--texto-oscuro);
 }
 
 /* Manchas decorativas de fondo (Blobs) */
 .decoracion-fondo {
-    position: absolute;
+    position: fixed; /* Cambiado a fixed para que se vea siempre al hacer scroll */
     z-index: -1;
     filter: blur(60px);
     opacity: 0.6;
@@ -38,12 +39,13 @@ body {
 }
 
 .contenedor-principal {
-    max-width: 950px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
+    position: relative;
 }
 
-/* Encabezado con nueva forma y color */
+/* Encabezado */
 .encabezado-moderno {
     background: var(--encabezado);
     color: white;
@@ -74,25 +76,27 @@ body {
     border-color: var(--detalle);
 }
 
-/* Tarjetas con estilo femenino */
+/* Cuadrícula de Tarjetas */
 .cuadricula-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 25px;
     margin-top: 50px;
 }
 
 .tarjeta {
     background: var(--blanco);
-    padding: 30px;
+    padding: 25px;
     border-radius: 25px;
     border-bottom: 8px solid var(--detalle);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .tarjeta:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-bottom-color: var(--acento);
     box-shadow: 0 15px 30px rgba(224, 187, 228, 0.3);
 }
@@ -100,12 +104,26 @@ body {
 .numero {
     background: var(--detalle);
     color: var(--encabezado);
-    width: 30px; height: 30px;
+    width: 35px; height: 35px;
     display: flex; align-items: center; justify-content: center;
-    border-radius: 10px; font-weight: bold; margin-bottom: 20px;
+    border-radius: 12px; 
+    font-weight: bold; 
+    margin-bottom: 15px;
+    font-size: 0.9em;
 }
 
-.tarjeta h2 { color: var(--encabezado); margin: 0 0 10px 0; }
+.tarjeta h2 { 
+    color: var(--encabezado); 
+    margin: 0 0 10px 0; 
+    font-size: 1.4em;
+    text-transform: uppercase;
+}
+
+.tarjeta p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
 
 .ejemplo { 
     display: block; 
@@ -115,22 +133,9 @@ body {
     border: 1px dashed var(--acento);
     border-radius: 10px;
     color: #6a5a6a; 
-    font-family: 'Consolas', monospace; 
+    font-family: 'Consolas', 'Courier New', monospace; 
+    font-size: 0.85em;
+    word-break: break-all;
 }
 
-.btn-ver {
-    background: transparent;
-    border: 2px solid var(--encabezado);
-    color: var(--encabezado);
-    padding: 8px 20px;
-    border-radius: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-ver:hover {
-    background: var(--encabezado);
-    color: white;
-}
+/* Nota: Se ha eliminado el estilo .btn-ver ya que el botón fue quitado del HTML */
